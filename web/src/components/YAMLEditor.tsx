@@ -21,7 +21,7 @@ const [code, setCode] = useState<string |  undefined>();
 
   return (
     <>
-      <div className="relative bg-[#364E66] flex flex-col flex-grow rounded-lg drop-shadow-[4px_4px_8px_rgba(17,24,39,1)] md:w-1/2">
+      <div className="relative bg-[#364E66] flex flex-col flex-grow h-[720px] rounded-lg drop-shadow-[4px_4px_8px_rgba(17,24,39,1)] md:w-1/2">
         {/* YAML tag */}
         <p className="absolute right-5 top-4 font-medium text-[#C58556] z-10">
           YAML

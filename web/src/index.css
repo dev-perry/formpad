@@ -16,3 +16,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+form {
+  @apply flex flex-col space-y-6
+}
+
+label {
+  @apply text-[#56C5AD] font-medium
+}
+
+input[type='text'], input[type='email'], textarea{
+  @apply bg-transparent border-2 border-[#B5BECC] rounded-md text-[#FEFEFE] placeholder-[#B5BECC]
+}
+
+input[type='date']{
+  @apply bg-transparent border-2 border-[#B5BECC] rounded-md text-[#FEFEFE] placeholder-[#B5BECC]
+}
+
+select{
+  @apply bg-transparent border-2 border-[#B5BECC] rounded-md text-[#FEFEFE] placeholder-[#B5BECC]
+}
+
+input::-webkit-calendar-picker-indicator {
+  color-scheme: dark;
+}
+
+input[type='checkbox']{
+  @apply bg-transparent border-2 accent-[#B5BECC] border-[#B5BECC] rounded placeholder-[#B5BECC] mr-2
+}
