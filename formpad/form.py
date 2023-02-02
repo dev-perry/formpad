@@ -4,7 +4,7 @@ from formpad.inputs import *
 
 @dataclass
 class Form:
-    filepath: str = field(init=True)
+    yaml_string: str = field(init=True)
     raw: dict = field(init=False)
     count: int = field(init=False)
     content: list[Input] = field(init=False)
@@ -25,16 +25,15 @@ class Form:
 
         return input_list
     
-    def parse_yaml_file(self, scheme: str):
-        with open(scheme, "r") as stream:
-            try:
-                return yaml.safe_load(stream)
-            except yaml.YAMLError:
-                raise Exception("Invalid YAML file")
+    def parse_yaml(self, scheme: str):
+        try:
+            return yaml.safe_load(scheme)
+        except yaml.YAMLError:
+            raise Exception("Invalid YAML configuration")
     
     def __post_init__(self):
         try:
-            self.raw = self.parse_yaml_file(self.filepath)
+            self.raw = self.parse_yaml(self.yaml_string)
             self.count = len(self.raw)
             self.content = self.build()
         except Exception as e:
