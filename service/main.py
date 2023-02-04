@@ -1,6 +1,6 @@
 import random
 import os
-from fastapi import FastAPI, HTTPException, status
+from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse, StreamingResponse
 from formpad.form import Form
 from formpad.templater import Templater
