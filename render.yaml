@@ -9,3 +9,6 @@ services:
     healthCheckPath: /health
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn service.main:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.1
