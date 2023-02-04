@@ -8,7 +8,9 @@ services:
     branch: testing-testing
     healthCheckPath: /health
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn service.main:app --port 10000
+    startCommand: uvicorn service.main:app
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.1
+      - key: PORT
+        value: 8000
