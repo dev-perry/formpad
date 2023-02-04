@@ -11,7 +11,8 @@ services:
     startCommand: uvicorn service.main:app --host 0.0.0.0 --port 10000
     buildFilter:
       paths:
-      - service/**/*.{py, yaml}
+      - service/**/*.py
+      - service/**/*.yaml
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.1
@@ -19,7 +20,6 @@ services:
   - type: web
     name: test-formpad-editor
     env: static
-    region: ohio
     plan: starter
     branch: testing-testing
     rootDir: web
