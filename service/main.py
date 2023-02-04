@@ -1,6 +1,6 @@
 import random
 import os
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, status
 from fastapi.responses import HTMLResponse, StreamingResponse
 from formpad.form import Form
 from formpad.templater import Templater
@@ -16,7 +16,7 @@ starter_schemes = os.path.join(dirname, "starters")
 
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    return status.HTTP_200_OK
 
 @app.post("/convert", response_class=HTMLResponse)
 def convert_YAML(editor_request: EditorRequest):
