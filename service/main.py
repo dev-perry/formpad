@@ -16,7 +16,7 @@ starter_schemes = os.path.join(dirname, "starters")
 
 @app.get("/health")
 def health():
-    return status.HTTP_200_OK
+    return "System is healthy."
 
 @app.post("/convert", response_class=HTMLResponse)
 def convert_YAML(editor_request: EditorRequest):
