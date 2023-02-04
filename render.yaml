@@ -1,0 +1,12 @@
+services:
+  # API Service configuration
+  - type: web
+    name: test-formpad-service
+    env: python
+    region: ohio
+    plan: starter
+    branch: testing-testing
+    rootDir: service
+    healthCheckPath: /health
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app
