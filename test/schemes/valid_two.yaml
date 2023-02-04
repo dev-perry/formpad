@@ -1,0 +1,49 @@
+#duplicates of fields
+- type: textarea
+  name: textarea-1
+  attributes:
+    label: Describe A Pail
+    description: Use your best descriptive language to describe a pail
+    placeholder: "A pail is..."
+  validations:
+    required: false
+- type: dropdown
+  name: dropdown-1
+  attributes:
+    label: What does it mean to be alive?
+    description: We desperately need this answer
+    options:
+      - label: Taco Tuesdays
+      - label: Cashflow yield
+      - label: Mother's Milk
+      - label: Caveman bread
+  validations:
+    required: true
+- type: checkbox
+  name: checkbox-1
+  attributes:
+    label: Affirm Cupcake Supremacy
+    description: We need to know for 100% without a doubt that you believe in cupcake supremacy.
+    options:
+      - label: I believe that cupcakes are supreme
+        required: true
+- type: dropdown
+  name: dropdown-2
+  attributes:
+    label: Pepsi or Coca Cola?
+    description: We're in a diner now.
+    options:
+      - label: Pepsi
+      - label: Coca-Cola
+      - label: Toothpaste
+      - label: Pita bread yolo
+  validations:
+    required: true
+- type: textarea
+  name: textarea-2
+  attributes:
+    label: Who is Bill Gurley?
+    description: I mean, just get to writing my dude.
+    placeholder: "Well forescore and thirty-two seconds ago"
+  validations:
+    required: false
