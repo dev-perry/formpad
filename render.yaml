@@ -9,6 +9,19 @@ services:
     healthCheckPath: /health
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn service.main:app --host 0.0.0.0 --port 10000
+    buildFilter:
+      paths:
+      - service/**/*.{py, yaml}
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.1
+  #Web editor configuration
+  - type: web
+    name: test-formpad-editor
+    env: static
+    region: ohio
+    plan: starter
+    branch: testing-testing
+    rootDir: web
+    buildCommand: yarn build
+    staticPublishPath: ./build
