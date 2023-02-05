@@ -16,6 +16,11 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.1
+      - key: PRODUCTION_URL
+        fromService:
+          type: web
+          name: test-formpad-editor
+          property: host
   #Web editor configuration
   - type: web
     name: test-formpad-editor
@@ -25,3 +30,9 @@ services:
     rootDir: web
     buildCommand: yarn build
     staticPublishPath: ./build
+    envVars:
+      - key: REACT_APP_API_URL
+        fromService:
+          type: web
+          name: test-formpad-service
+          property: host

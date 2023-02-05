@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import Editor, { Monaco} from '@monaco-editor/react';
 
 export default function YAMLEditor() {
@@ -18,6 +18,15 @@ export default function YAMLEditor() {
   }
 
 const [code, setCode] = useState<string |  undefined>();
+
+  useEffect(() => {
+    const fetchStarter = async () => {
+      const res = await fetch(process.env.REACT_APP_API_URL + '/starter')
+      const starter = await res.text()
+      setCode(starter)
+    }
+    fetchStarter()
+  }, [])
 
   return (
     <>
