@@ -20,7 +20,7 @@ services:
         fromService:
           type: web
           name: test-formpad-editor
-          property: host
+          property: hostport
   #Web editor configuration
   - type: web
     name: test-formpad-editor
@@ -35,4 +35,4 @@ services:
         fromService:
           type: web
           name: test-formpad-service
-          property: host
+          property: hostport
