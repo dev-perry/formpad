@@ -1,5 +1,6 @@
 import YAMLEditor from './components/YAMLEditor';
 import FormViewer from './components/FormViewer';
+import { EditorProvider } from './contexts/EditorContext';
 
 export default function App() {
   return (
@@ -20,7 +21,9 @@ export default function App() {
       </div>
       <div className="m-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-[44px]">
         <div className="flex flex-col  md:flex-row space-y-4 md:space-y-0 w-full space-x-0 md:space-x-6 lg:space-x-[76px]">
+          <EditorProvider>
           <YAMLEditor />
+          </EditorProvider>
           <FormViewer />
         </div>
       </div>
