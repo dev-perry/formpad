@@ -1,6 +1,7 @@
 import random
 import os
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, StreamingResponse
 from formpad.form import Form
 from formpad.templater import Templater
@@ -11,12 +12,26 @@ app = FastAPI(
     version="0.1.0",
 )
 
+origins = [
+    "http://localhost",
+    "http://localhost:3000",
+    os.environ.get("PRODUCTION_URL"),
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 dirname = os.path.dirname(__file__)
 starter_schemes = os.path.join(dirname, "starters")
 
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    return "System is healthy."
 
 @app.post("/convert", response_class=HTMLResponse)
 def convert_YAML(editor_request: EditorRequest):
