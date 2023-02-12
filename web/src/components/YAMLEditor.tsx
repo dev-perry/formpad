@@ -87,7 +87,7 @@ export default function YAMLEditor() {
                 horizontal: "hidden"
               },
               guides: {
-                indentation: false,
+                indentation: true,
               },
               wordWrap: "on",
               scrollBeyondLastLine: false,
