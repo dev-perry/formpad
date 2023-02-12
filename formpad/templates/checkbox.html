@@ -1,4 +1,10 @@
+<div>
+    <label>{{ label}} </label>
+    <p>{{description}}</p>
 {% for option in options %}
+<label>
 <input type="checkbox"/>
-<label>{{ option.label }}</label>
+<span>{{ option.label }}</span>
+</label>
 {% endfor %}
+</div>
