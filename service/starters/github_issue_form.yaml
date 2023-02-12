@@ -1,33 +1,23 @@
-# The original scheme inlcuded the checkbox field as "checkboxes", this has been changed to "checkbox"
-# The original scheme included a markdown object. This has been eliminated.
-# The original scheme did not include name field for field attributes. This has been added.
-
 - type: textarea
-  name: textarea-1
+  id: textarea-1
   attributes:
     label: Operating System
     description: What operating system are you using?
     placeholder: "Example: macOS Big Sur"
     value: operating system
-  validations:
-    required: true
 - type: dropdown
-  name: dropdown-1
+  id: dropdown-1
   attributes:
     label: Version
     description: What version of our software are you running?
-    multiple: false
     options:
       - label: 1.0.2 (Default)
       - label: 1.0.3 (Edge)
-  validations:
-    required: true
 - type: checkbox
-  name: checkbox-1
+  id: checkbox-1
   attributes:
     label: Code of Conduct
     description: The Code of Conduct helps create a safe space for everyone. We require
       that everyone agrees to it.
     options:
-      - label: I agree to follow this project's [Code of Conduct](link/to/coc)
-        required: true
+      - label: I agree to follow this project's Code of Conduct
