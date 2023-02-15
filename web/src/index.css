@@ -17,6 +17,10 @@ code {
     monospace;
 }
 
+p[id='error-label']{
+  @apply text-[#FF5C5C] font-medium
+}
+
 form {
   @apply flex flex-col space-y-6
 }
