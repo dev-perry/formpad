@@ -1,7 +1,7 @@
-from formpad.attributes import CheckboxInputAttribute
+from formpad.attributes import OptionsAttribute
 from .base import Input
 
 class CheckboxInput(Input):
     type = "checkbox"
     template_file = "checkbox.html"
-    attributes: CheckboxInputAttribute
+    attributes: OptionsAttribute

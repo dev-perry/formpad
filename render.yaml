@@ -1,0 +1,26 @@
+services:
+  # API Service configuration
+  - type: web
+    name: formpad-service
+    env: python
+    region: ohio
+    plan: starter
+    healthCheckPath: /health
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn service.main:app --host 0.0.0.0 --port 10000
+    buildFilter:
+      paths:
+      - service/**/*.py
+      - service/**/*.yaml
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.1
+  #Web editor configuration
+  - type: web
+    name: formpad-editor
+    env: static
+    plan: starter
+    branch: testing-testing
+    rootDir: web
+    buildCommand: yarn build
+    staticPublishPath: ./build

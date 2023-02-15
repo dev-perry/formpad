@@ -2,7 +2,7 @@ from .base import Attribute
 from pydantic import validator
 from formpad.utils import are_labels_present
 
-class DropdownInputAttribute(Attribute):
+class OptionsAttribute(Attribute):
     options: list[dict]
 
     @validator('options')

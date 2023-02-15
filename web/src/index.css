@@ -17,8 +17,20 @@ code {
     monospace;
 }
 
+p[id='error-label']{
+  @apply text-[#FF5C5C] font-medium
+}
+
 form {
   @apply flex flex-col space-y-6
+}
+
+form p {
+  @apply text-[#B5BECC] font-normal
+}
+
+form div {
+  @apply flex flex-col space-y-2
 }
 
 label {
@@ -26,15 +38,15 @@ label {
 }
 
 input[type='text'], input[type='email'], textarea{
-  @apply bg-transparent border-2 border-[#B5BECC] rounded-md text-[#FEFEFE] placeholder-[#B5BECC]
+  @apply w-full bg-transparent border-2 border-[#B5BECC] rounded-md text-[#FEFEFE] placeholder-[#B5BECC]
 }
 
 input[type='date']{
-  @apply bg-transparent border-2 border-[#B5BECC] rounded-md text-[#FEFEFE] placeholder-[#B5BECC]
+  @apply w-full bg-transparent border-2 border-[#B5BECC] rounded-md text-[#FEFEFE] placeholder-[#B5BECC]
 }
 
 select{
-  @apply bg-transparent border-2 border-[#B5BECC] rounded-md text-[#FEFEFE] placeholder-[#B5BECC]
+  @apply w-full bg-transparent border-2 border-[#B5BECC] rounded-md text-[#FEFEFE] placeholder-[#B5BECC]
 }
 
 input::-webkit-calendar-picker-indicator {

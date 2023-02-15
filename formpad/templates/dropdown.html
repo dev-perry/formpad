@@ -1,6 +1,9 @@
-<label for="{{ name }}">{{ label }}</label>
-<select id="{{ name }}" name="{{ name }}" multiple>
+<div>
+<label for="{{ id }}">{{ label }}</label>
+<p>{{ description }}</p>
+<select id="{{ id }}" name="{{ id }}">
     {% for option in options %}
     <option value="{{ option.label }}">{{ option.label }}</option>
     {% endfor %}
 </select>
+</div>
