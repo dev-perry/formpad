@@ -8,6 +8,7 @@ class Form:
     raw: dict = field(init=False)
     count: int = field(init=False)
     content: list[Input] = field(init=False)
+    is_valid: bool = field(init=False, default=True)
 
     def get_input_type(self, type: str):
         return {
@@ -37,4 +38,5 @@ class Form:
             self.count = len(self.raw)
             self.content = self.build()
         except Exception as e:
+            self.is_valid = False
             raise Exception(f"Error while building form: {e}")
