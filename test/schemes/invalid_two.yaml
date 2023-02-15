@@ -1,0 +1,23 @@
+# incorrectly-formatted IDs
+- type: dropdown
+  id: island 2
+  attributes:
+    label: Want an island?
+    description: We have islands for sale.
+    options:
+      - label: Yes, give me an island
+      - label: Nah, I'm good
+- type: checkbox
+  id: checkbox-8
+  attributes:
+    label: Where would you fly?
+    description: Here is a plane that goes real fast.
+    options:
+    - label: To the moon
+    - label: To that island you mentioned
+    - label: To Narnia...maybe
+- type: Describe a war with Jimmy Cameron
+  id: jimmy- m
+  attributes:
+    description: Come on, dude just go.
+    placeholder: "A war with Jimmy Cameron demands..."

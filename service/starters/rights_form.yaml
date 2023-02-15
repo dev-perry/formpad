@@ -16,7 +16,7 @@
 - type: checkbox
   id: checkbox-1
   attributes:
-    label: Code of Conduct
-    description: The Code of Conduct helps create a safe space for everyone. We require that everyone agrees to it.
+    label: Have you read Dr. Seuss?
+    description: This is a very important question, the classics are crucial.
     options:
-      - label: I agree to follow this project's Code of Conduct
+      - label: Yes, I have read Dr. Seuss and it is amazing.

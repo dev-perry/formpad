@@ -1,0 +1,19 @@
+# missing attributes
+- type: textarea
+  id: blue-2
+  attributes:
+    description: Need this color described
+    placeholder: "Blue is..."
+- type: dropdown
+  attributes:
+    label: What is the N'avi religion?
+    description: The movie, Avatar, yeah really.
+    options:
+      - label: Animalism
+      - label: Syncretism
+- type: checkbox
+  id: checkbox-1
+  attributes:
+    label: Fancy a cry?
+    description: It's okay, you can go ahead.
+    options:
