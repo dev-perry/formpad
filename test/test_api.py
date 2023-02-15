@@ -14,7 +14,7 @@ class TestAPI:
         assert response.stream is not None
     
     def test_convert(self):
-        scheme_content = read_file("valid_two.yaml")
+        scheme_content = read_file("valid_one.yaml")
         response = client.post("/convert", json={"scheme": scheme_content})
 
         assert response.status_code == 200

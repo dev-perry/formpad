@@ -1,4 +1,3 @@
 from .base import Attribute
-from .checkbox import CheckboxInputAttribute
-from .dropdown import DropdownInputAttribute
+from .options import OptionsAttribute
 from .textarea import TextAreaInputAttribute

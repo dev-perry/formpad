@@ -1,20 +1,22 @@
 - type: textarea
-  name: bio
+  id: bio
   attributes:
     label: Author Bio
     description: Tell us a bit about yourself
     placeholder: "I am a poet that writes..."
-  validations:
-    required: false
 - type: dropdown
-  name: rights
+  id: rights
   attributes:
     label: What rights do you own for your work?
     description: We need to be aware of the publication rights that exist for this work.
-    multiple: false
     options:
       - label: Full rights
       - label: Partial rights
       - label: Other party has rights
-  validations:
-    required: true
+- type: checkbox
+  id: checkbox-1
+  attributes:
+    label: Have you read Dr. Seuss?
+    description: This is a very important question, the classics are crucial.
+    options:
+      - label: Yes, I have read Dr. Seuss and it is amazing.

@@ -1,5 +1,6 @@
 import random
 import os
+import sys
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, StreamingResponse
@@ -38,8 +39,8 @@ def convert_YAML(editor_request: EditorRequest):
     try:
         form_data = Form(editor_request.scheme)
         html_form = Templater(form_data)
-    except:
-        raise HTTPException(status_code=500, detail="Unable to generate form.")
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=e.args[0])
     
     return HTMLResponse(content=html_form.render_form(), status_code=200)
 

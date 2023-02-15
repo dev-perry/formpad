@@ -15,6 +15,7 @@ export default function YAMLEditor() {
 
   const fetchForm = async () => {
       requestDispatch!({ type: 'SET_HAS_ERROR', payload: false })
+      displayDispatch!({ type: 'SET_FORM_CONTENT', payload: '' })
       requestDispatch!({ type: 'SET_FETCHING_HTML', payload: true })
 
       try {
@@ -27,6 +28,9 @@ export default function YAMLEditor() {
             scheme: editorState.content
           })
         })
+        if (!res.ok) {
+          throw new Error('Something went wrong')
+        }
         const html = await res.text()
         displayDispatch!({ type: 'SET_FORM_CONTENT', payload: html })
       } catch (err) {
@@ -51,9 +55,20 @@ export default function YAMLEditor() {
 
   useEffect(() => {
     const fetchStarter = async () => {
-      const res = await fetch(process.env.REACT_APP_API_URL + '/starter')
-      const starter = await res.text()
-      editorDispatch!({ type: 'SET_CONTENT', payload: starter })
+      try {
+        requestDispatch!({ type: 'SET_HAS_ERROR', payload: false })
+        requestDispatch!({ type: 'SET_FETCHING_STARTER', payload: true })
+        const res = await fetch(process.env.REACT_APP_API_URL + '/starter')
+        if (!res.ok) {
+          throw new Error('Something went wrong')
+        }
+        const starter = await res.text()
+        editorDispatch!({ type: 'SET_CONTENT', payload: starter })
+      } catch (err) {
+        requestDispatch!({ type: 'SET_HAS_ERROR', payload: true })
+        requestDispatch!({ type: 'SET_FETCHING_STARTER', payload: false })
+      }
+
     }
     fetchStarter()
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -87,7 +102,7 @@ export default function YAMLEditor() {
                 horizontal: "hidden"
               },
               guides: {
-                indentation: false,
+                indentation: true,
               },
               wordWrap: "on",
               scrollBeyondLastLine: false,
