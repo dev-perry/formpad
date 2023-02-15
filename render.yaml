@@ -1,11 +1,10 @@
 services:
   # API Service configuration
   - type: web
-    name: test-formpad-service
+    name: formpad-service
     env: python
     region: ohio
     plan: starter
-    branch: testing-testing
     healthCheckPath: /health
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn service.main:app --host 0.0.0.0 --port 10000
@@ -18,7 +17,7 @@ services:
         value: 3.11.1
   #Web editor configuration
   - type: web
-    name: test-formpad-editor
+    name: formpad-editor
     env: static
     plan: starter
     branch: testing-testing
