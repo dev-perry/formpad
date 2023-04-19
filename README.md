@@ -77,4 +77,4 @@ Since this is a portfolio project, I see a lot of opportunities for improvement.
 - Use better directory organization to simplify start and build commands
 
 ### **About Me**
-I am a tinkerer. I like to figure out how things work and smash together apples and oranges to make weird juice. You can see some of my other concepts [here](https://portfolio.perryasibeybonsu.com/).
+I am a tinkerer. I like to figure out how things work and smash together apples and oranges to make weird juice. You can see some of my other concepts [here](https://pabwota.com/).
