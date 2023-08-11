@@ -54,9 +54,6 @@ Forms describe the inputs that compose a single form. The model for a Form is:
 ```
 
 ### **How To Use The App**
-The easiest way to use the app is to view it [online](https://formpad-editor.onrender.com).
-
-The other away to use the app would be to deploy it on Render:
 
 1. Clone the repository with the command
 ```
